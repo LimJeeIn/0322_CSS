@@ -1,0 +1,172 @@
+body,
+p,
+ul {
+  margin: initial;
+  padding: initial;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: initial;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  /* 부모 공간을 넘지 않게 부모의 100%로 */
+  max-width: 100%;
+  height: auto;
+  /* 이미지의 하단공간을 top으로 없애기 */
+  vertical-align: top;
+}
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.l_wrapper {
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section_purple {
+  background-color: #673399;
+  color: white;
+}
+
+.section_pink {
+  background-color: seashell;
+  color: salmon;
+}
+
+.section-header {
+  box-shadow: inset 0 0 10px cyan;
+  margin-bottom: 100px;
+}
+
+.section-contents {
+  box-shadow: inset 0 0 10px deeppink;
+}
+
+.title {
+  box-shadow: inset 0 0 10px yellow;
+  display: flex;
+  align-items: center;
+}
+
+.title-headings {
+  box-shadow: inset 0 0 10px darkorange;
+  flex-basis: 26%;
+  flex-shrink: 0;
+  font-size: 40px;
+}
+
+.title-headings strong {
+  box-shadow: inset 0 -20px 0 orangered;
+}
+
+.title p {
+  box-shadow: inset 0 0 10px darkorange;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.title p::before {
+  content: ' ';
+  width: 60px;
+  height: 2px;
+  flex-shrink: 0;
+  background-color: currentColor;
+  margin-right: 20px;
+}
+
+.card {
+  background-color: white;
+  color: #222;
+  margin-bottom: 24px;
+  display: flex;
+  /* 컨텐츠 양이랑 상관없이 min값으로 용이하게 넣어준 것 */
+  min-height: 200px;
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.card-cover {
+  box-shadow: inset 0 0 10px darkorange;
+  flex-basis: 26%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-cover h2 {
+  /* h2는 img보다 나중에 마크업 되어서 앞으로 튀어 나와야 되지만
+  img가 앱솔루트 이기 때문에 앞으로 갔다
+  그래서 h2에 position:static이 아닌값을 주어 앞으로 나오게 한다 */
+  position: absolute;
+  background-color: rgb(0 0 0 / 0.4);
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+}
+
+.card-contents {
+  box-shadow: inset 0 0 20px dodgerblue;
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 0;
+  padding: 30px;
+}
+
+.lists {
+  box-shadow: inset 0 0 20px dodgerblue;
+}
+/* li에 flex를 주면 컨텐츠안의 텍스트가 길어지면 요소들이 찌그러진다 
+li안의 문장이 늘어나 컨텐츠들의 크기가 늘어나면
+해당 li 만 따로 클래스를 줘서 컨텐츠들의 크기가 유지되게 적용해야한다*/
+.lists li {
+  text-indent: -20px;
+  padding-left: 20px;
+}
+
+.lists li + li {
+  margin-top: 6px;
+}
+
+.lists li::before {
+  content: ' ';
+  background-color: orange;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 10px;
+}
